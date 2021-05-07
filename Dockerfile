@@ -1,10 +1,15 @@
-FROM java:8
+#
+# Build stage
+#
+FROM maven:3.6.0-jdk-8-slim AS build
+COPY src /home/app/src
+COPY pom.xml /home/app
+RUN mvn -f /home/app/pom.xml clean package
 
-COPY /target/stack-excercise-1.0.1.jar /opt/app/stack.jar
-
-WORKDIR /opt/app
-
+#
+# Package stage`
+#
+FROM openjdk:8-jre-slim
+COPY --from=build /home/app/target/stack-1.0.1.jar /usr/local/lib/stack.jar
 EXPOSE 8080
-
-CMD ["java", "-jar", "stack.jar"]
-
+ENTRYPOINT ["java","-jar","/usr/local/lib/stack.jar"]
