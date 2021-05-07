@@ -51,7 +51,7 @@ public class StackController {
     @GetMapping(value = "/peek", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public DataRep peek() {
-        LOGGER.info("{} Pulling top element from stack", LOG_PREFIX);
+        LOGGER.info("{} Pulling top element from stack", LOG_PREFIX)
         try {
             return StackMapper.dataToDataRep(stackService.peek());
         } catch (EmptyStackException exception){
