@@ -65,11 +65,5 @@ public class StackControllerTest {
         Assert.assertEquals(ERROR_MESSAGE , result.getResponse().getErrorMessage());
     }
 
-    @Test
-    public void complete() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.post(PUSH_URI, data)
-                .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(status().is(HttpStatus.CREATED.value()));
-    }
 
 }
