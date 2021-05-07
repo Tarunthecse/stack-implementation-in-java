@@ -34,5 +34,5 @@ GET : `http://IP/peek`
 DELETE : `http://IP/pop`
 
 If you are running program directly please use `localhost:8080` in place of IP in above APIs.
-If you are running this example with docker file please use `172.17.0.2:8080` in place of IP. `172.17.0.2` is default IP by docker but in your it might be different.
+If you are running this example with docker file please use `172.17.0.2:8080` in place of IP. `172.17.0.2` is default IP by docker but in your case it might be different.
 
