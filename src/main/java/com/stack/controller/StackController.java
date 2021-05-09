@@ -24,6 +24,7 @@ public class StackController {
      * @param data
      * @return 201 if items gets pushed successfully
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "/push/{data}")
     @ResponseStatus(HttpStatus.CREATED)
     public void push(@PathVariable int data) {
@@ -34,6 +35,7 @@ public class StackController {
     /**
      * @return 200 with top element if stack is not empty and item pulled removed successfully
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping(value = "/pop",produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public DataRep pop() {
@@ -48,6 +50,7 @@ public class StackController {
     /**
      * @return  200 with top if stack is not empty and item pulled successfully
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/peek", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public DataRep peek() {
